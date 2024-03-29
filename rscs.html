@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        table,tr,td{
+        border: 2px solid black;
+        border-collapse: collapse;
+        text-align: center;
+
+        }
+        #prem{
+            background-color: bisque;
+        }
+        #q{
+            background-color: blueviolet;
+        }
+        #r{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td rowspan="3">DAY</td>
+                <td colspan="4">Seminar</td>
+              </tr>
+        
+              <tr>
+                <td colspan="2">Schedule</td>
+                <td colspan="2" rowspan="2">Topic</td>
+        
+        
+              </tr>
+              <tr>
+                
+                <td>Begin</td>
+                <td>End</td>
+              </tr>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">Monday</td>
+                <td id="prem" rowspan="2">8:00am</td>
+                <td  id="q"rowspan="2">9:00pm </td>
+                <td colspan="2">introduction to xml</td>
+              </tr>
+              <tr>
+            
+                <td colspan="2"> validity dtv and rol ng</td>
+              </tr>
+              <tr>
+                <td rowspan="3">Tuesday</td>
+                <td id ="prem">8:00am</td>
+                <td id="prem">11:00am</td>
+                <td colspan="2" rowspan="2">Xpath</td>
+            
+              </tr>
+              <tr>
+                
+                <td id="prem">11:00am</td>
+                <td id="r">2:00am</td>
+              </tr>
+              <tr>
+                <td id="r">2:00am</td>
+                <td id="q">5:00pm</td>
+                <td colspan="2">XML technology</td>
+              </tr>
+            
+        </tbody>
+     
+      <tfoot>
+        <tr>
+            <td>Wednesday</td>
+            <td id="prem">8:00am</td>
+            <td id="r">12:00pm</td>
+            <td colspan="2">Xml technology oops</td>
+    
+        </tr>
+      
+      </tfoot>
+      
+
+
+
+
+
+    </table>
+</body>
+</html>
