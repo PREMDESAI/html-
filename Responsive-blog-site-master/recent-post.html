@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive nagivation bar</title>
+    <link rel="stylesheet" href="/recent-posts.css">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body data-page="recentPost">
+    <div class="wrapper blur">
+        <header>
+            <div class="container container-nav">
+                <a href="/home.html" class="text-decoration-none">
+                    <div class="title">
+                        <h1>Living the simple life</h1>
+                        <p>A BLOG EXPLORING MINIMALISM IN LIFE</p>
+                    </div>
+                </a>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="/home.html" class=" navItem">HOME</a></li>
+                        <li><a href="/About-page.html" class="navItem">ABOUT US</a></li>
+                        <li><a href="/recent-post.html" class="navItem">RECENT POSTS</a></li>
+                        <li><a href="#" onclick="toggle()">SUBSCRIBE</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="container container-main">
+            <div class="main-feed">
+                <ul class="main-posts"></ul>
+            </div>
+            <div class="summary-feed">
+                <div class="summary-feed-about">
+                    <h3 class="blue-font margin-zero">ABOUT ME</h3>
+                    <div class="about-image"></div>
+                    <p class="text-14 grey-font about-profile">I find life better, an I'm happier, when things are nice and simple.</p>
+                </div>
+                <div class="recent-posts-section">
+                    <h3 class="blue-font margin-zero">RECENT POSTS</h3>
+                    <ul class="recent-posts">
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="popup"></div>
+    <div id="confirmation"></div>
+    <div id="toast-error"></div>
+    <footer>
+        <p class="font-bold margin-zero">Living the Simple Life</p>
+        <p class="copyright-text">Copyright 2019</p>
+    </footer>
+    <script src="/index.js"></script>
+</body>
+</html>
