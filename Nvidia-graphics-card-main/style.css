@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #555555;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  /* justify-content: center;
+  align-items: center;
+  text-align: center; */
+  background-color: #0f0f0f;
+  width: 100%;
+  height: 7.5rem;
+  box-shadow: 0 0 2.5rem 0 #75ff00;
+  border-bottom: 0.5rem solid #75ff00;
+}
+
+nav > p {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 0 0 0 2%;
+  padding: 0;
+}
+
+nav > p > a {
+  color: #75ff00;
+  text-decoration: none;
+}
+
+nav .menu {
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav .menu ul {
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  height: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+}
+
+nav .menu li {
+  margin: 0;
+  padding: 0;
+}
+
+nav .menu a {
+  color: #c5c5c5;
+  font-size: 2.5rem;
+  text-decoration: none;
+  transition: 0.5s ease-in-out;
+}
+
+nav .menu a:hover {
+  color: #fff;
+}
+
+.box-content {
+  display: flex;
+  width: 112.5rem;
+  height: 37.5rem;
+  margin: 10rem auto;
+  box-shadow: 0 0 2.5rem 0 #252525;
+}
+
+.box-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333333;
+  width: 41.3rem;
+}
+
+.box-text p {
+  color: #fff;
+  font-size: 4rem;
+  width: 30rem;
+  text-align: center;
+}
+
+.box-photo {
+  height: 37.5rem;
+}
+
+.box-photo img {
+  height: 100%;
+  width: 71.2rem;
+}
+
+.text-nvidia-amd h2 {
+  font-size: 5rem;
+  color: #fff;
+  padding: 0;
+  margin: 20rem 0 0 0;
+  text-align: center;
+}
+
+/* CARD */
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 10rem auto;
+  justify-content: space-evenly;
+}
+
+.gpu-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fefefe;
+  width: 45rem;
+  height: 50rem;
+  margin: 1rem 0.25rem;
+  border: 0.5rem solid #656565;
+  box-shadow: 0 0 2rem #252525;
+  border-radius: 2.5%;
+}
+
+.gold {
+  border: 0.5rem solid #ffd700;
+  box-shadow: 0 0 2rem #bb9300;
+}
+
+.red {
+  border: 0.5rem solid #f00;
+  box-shadow: 0 0 2rem #b00;
+}
+
+.green {
+  border: 0.5rem solid #75ff00;
+  box-shadow: 0 0 2rem #31bb00;
+}
+
+.content-card {
+  width: 95%;
+  margin: 1rem;
+}
+
+.content-card .photo-card img {
+  width: 100%;
+}
+
+.description-item {
+  width: 90%;
+  margin: 2rem auto 0 auto;
+  border-left: 0.35rem solid #000;
+}
+
+.gold-border-left {
+  border-color: #ffd700;
+}
+
+.red-border-left {
+  border-color: #f00;
+}
+
+.green-border-left {
+  border-color: #75ff00;
+}
+
+.description-item h2 {
+  color: #000;
+  font-size: 3rem;
+  width: 95%;
+  margin: 0 0 2rem auto;
+}
+
+.description-item ul {
+  color: #858585;
+  padding: 0 0 0 4rem;
+}
+
+.description-item ul li {
+  color: #000;
+  font-size: 1.8rem;
+  width: 90%;
+  margin: 0.5rem auto 0.5rem 0;
+  list-style-position: inside;
+}
+
+.gold-font h2,
+data-gold {
+  color: #ffd700;
+}
+
+.red-font h2,
+data-red {
+  color: #f00;
+}
+
+.green-font h2,
+data-green {
+  color: #75ff00;
+}
+
+.description-item span {
+  color: #757575;
+}
+
+/* Desktop - 1600px */
+@media only screen and (max-width: 1600px) {
+  :root {
+    font-size: 8.3px;
+  }
+}
+
+/* Laptop - 1280px */
+@media only screen and (max-width: 1280px) {
+  :root {
+    font-size: 6.7px;
+  }
+}
+
+/* Tablet - 900px */
+@media only screen and (max-width: 900px) {
+  :root {
+    font-size: 4.1px;
+  }
+}
+
+/* Phone - 500px */
+@media only screen and (max-width: 500px) {
+  :root {
+    font-size: 2.6px;
+  }
+}
