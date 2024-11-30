@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vibration Data Analysis</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <style>
+      #graphDiv {
+        /* box-shadow: 1px 1px 10px 1px #888888;   */
+        margin: 30px;
+        margin-top: 100px;
+        /* border-radius: 30px; */
+        border: 1px solid rgb(78, 75, 255);
+      }
+      .all-btn {
+        display: flex;
+        justify-content: center; /* Horizontally center */
+        align-items: center; /* Vertically center */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="graphDiv"></div>
+    <div class="all-btn">
+      <input type="file" id="fileInput" style="display: none" />
+      <button id="chooseFileButton" onclick="chooseFile()">Choose File</button>
+      <button id="uploadButton" style="display: none" onclick="uploadFile()">
+        Upload New Data
+      </button>
+      <button id="playButton" onclick="startMovement()" disabled>Play</button>
+      <button id="stopButton" onclick="stopMovement()" disabled>Stop</button>
+    </div>
+
+    <script>
+      var xData = [];
+      var yData1 = [];
+      var yData2 = [];
+      var yData3 = [];
+      var intervalId;
+      var currentIndex = 0;
+      var MAX_DATA_POINTS = 100;
+
+      function handleFileUpload(event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          var data = e.target.result;
+          var lines = data.split("\n");
+          xData = [];
+          yData1 = [];
+          yData2 = [];
+          yData3 = [];
+          lines.forEach(function (line) {
+            var parts = line.trim().split(",");
+            xData.push(parseFloat(parts[0]));
+            yData1.push(parseFloat(parts[1]));
+            yData2.push(parseFloat(parts[2]));
+            yData3.push(parseFloat(parts[3]));
+          });
+          $("#playButton").prop("disabled", false);
+          $("#chooseFileButton").hide();
+          $("#uploadButton").show();
+        };
+        reader.readAsText(file);
+      }
+
+      function chooseFile() {
+        $("#fileInput").click();
+      }
+
+      function uploadFile() {
+        location.reload();
+      }
+
+      function startMovement() {
+        if (
+          xData.length === 0 ||
+          yData1.length === 0 ||
+          yData2.length === 0 ||
+          yData3.length === 0
+        ) {
+          alert("Please upload a dataset first.");
+          return;
+        }
+        $("#playButton").prop("disabled", true);
+        $("#stopButton").prop("disabled", false);
+        var i = currentIndex;
+        intervalId = setInterval(function () {
+          if (i >= xData.length) {
+            clearInterval(intervalId);
+            $("#playButton").prop("disabled", false);
+            $("#stopButton").prop("disabled", true);
+            return;
+          }
+          Plotly.extendTraces(
+            "graphDiv",
+            {
+              x: [[xData[i]], [xData[i]], [xData[i]]],
+              y: [[yData1[i]], [yData2[i]], [yData3[i]]],
+            },
+            [0, 1, 2]
+          );
+          i++;
+          currentIndex = i;
+          if (i >= MAX_DATA_POINTS) {
+            Plotly.relayout("graphDiv", {
+              xaxis: {
+                range: [xData[i - MAX_DATA_POINTS], xData[i]],
+              },
+            });
+          }
+        }, 100); // Update every 100 milliseconds
+      }
+
+      function stopMovement() {
+        clearInterval(intervalId);
+        $("#playButton").prop("disabled", false);
+        $("#stopButton").prop("disabled", true);
+      }
+
+      $(document).ready(function () {
+        $("#fileInput").on("change", handleFileUpload);
+
+        var layout = {
+          title: "Vibration Signal (mm/s2)",
+          xaxis: {
+            title: "Time",
+          },
+          yaxis: {
+            title: "Vibration",
+          },
+        };
+
+        var data = [
+          {
+            x: [],
+            y: [],
+            mode: "lines+markers",
+            type: "scatter",
+            name: "Vibration Signal 1",
+          },
+          {
+            x: [],
+            y: [],
+            mode: "lines+markers",
+            type: "scatter",
+            name: "Vibration Signal 2",
+          },
+          {
+            x: [],
+            y: [],
+            mode: "lines+markers",
+            type: "scatter",
+            name: "Vibration Signal 3",
+          },
+        ];
+
+        Plotly.newPlot("graphDiv", data, layout);
+      });
+    </script>
+  </body>
+</html>
