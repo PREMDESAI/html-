@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>video background</title>
+<style>
+	body{
+		background-image: url(1.png);
+		background-size: cover;
+	}
+	.vid{
+		position: fixed;
+		right: 0; 
+		bottom: 0;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: -99;
+	}
+	p{
+	font-family: Calibri;
+	color:white;
+	font-weight: bolder;
+}
+a{
+	font-family: Calibri;
+	font-weight: bold;
+	}
+
+#form{
+	color: ;
+	background:;
+	padding-top: 30px;
+	padding-left: 60px;
+	font-size: 40px;
+	width: 470px;
+	height: 500px;
+	border-radius: 10px;
+	margin: auto;
+	opacity: 8;
+}
+#form input{
+	margin-top: 30px;
+	width: 200px;
+	height: 40px;
+	font-size: 25px;
+	border-radius: 5px;
+}
+#form input[name="user"]
+{
+	width: 400px;
+	font-family: Calibri;
+	border-radius: 5px;
+}
+#form input[name="pass"]
+{
+	width: 400px;
+	font-family: Calibri;
+    border-radius:5px;
+}
+#form input[type="submit"]
+{
+	width: 150px;
+	margin-top: 10px;
+	border-radius: 50px;
+	margin-left: 280px;
+	height: 50px;
+	background: blue;
+	color: white;
+	font-weight: bold;
+}
+#form input[type="submit"]:hover{
+	background: white;
+	color: blue;
+}
+.navigation{
+	float: right;
+	margin-top: -100px;
+}
+.navigation ul li{
+	list-style: none;
+	display: inline-block;
+	float: left;
+}
+
+.navigation ul li a{
+	text-decoration: none;
+	color: chocolate;
+	font-size: 24px;
+	font-family: Calibri;
+	display: block;
+	padding: 0 18px;
+}
+.home{
+	float:right;
+}
+
+	
+	</style>
+</head>
+<body>
+
+
+	<div id="form">
+    lOGIN HERE
+	<a href="../home/index.html" class="home">HOME</a><br>
+	<form>
+		<p>UserName</p>
+		<input type="text" placeholder="Enter Username" name="user">
+		<p>Password</p>
+         
+		<input type="password" placeholder="Enter Password" name="pass">
+       
+		<input type="submit" value="login" name="login">
+       
+		<a href="#">Forget ur password?</a><br>
+		<a href="#">Don't have an account?</a>
+        
+
+			</form>
+</div>
+
+	<video autoplay loop muted class="vid">
+	<source src="02.mp4" type="video/mp4">
+	</video>
+    
+</body>
+</html>
