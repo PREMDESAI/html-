@@ -1,0 +1,4 @@
+- **Reference ⬇️**
+  - [Scrollbar](https://scrollbar.app/)
+  - [FakeStore Api](https://fakestoreapi.com/)
+  - [Midudev Shopping Cart Inspiration](https://github.com/midudev/aprendiendo-react/tree/master/projects/06-shopping-cart)
